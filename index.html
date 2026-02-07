@@ -8,7 +8,6 @@
   <meta name="description" content="Snow removal in Naperville, IL — driveway & sidewalk clearing, commercial plowing, and ice management. Request a quote and get scheduled fast." />
   <meta name="robots" content="index, follow" />
 
-  <!-- IMPORTANT: load your extracted CSS file -->
   <link rel="stylesheet" href="./styles.css" />
 
   <!-- LocalBusiness schema (template placeholders) -->
@@ -30,10 +29,10 @@
 </head>
 
 <body>
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="Naperville Snow Removal home">
+        <a class="brand" href="index.html">
           <span class="brand-badge" aria-hidden="true"></span>
           Naperville Snow Removal
         </a>
@@ -46,11 +45,9 @@
         </nav>
 
         <div class="header-cta">
-          <a class="phone" href="tel:+16304451780" aria-label="Call (630) 445-1780">(630) 445-1780</a>
+          <a class="phone" href="tel:+16304451780">(630) 445-1780</a>
           <a class="btn btn-primary" href="#contact">Get Scheduled</a>
-          <button class="menu-btn" type="button" aria-controls="mobilePanel" aria-expanded="false">
-            Menu
-          </button>
+          <button class="menu-btn" type="button" aria-controls="mobilePanel" aria-expanded="false">Menu</button>
         </div>
       </div>
 
@@ -63,7 +60,7 @@
     </div>
   </header>
 
-  <main id="main-content">
+  <main>
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -120,55 +117,53 @@
             </div>
           </div>
 
-          <!-- RIGHT (wrapper helps layout) -->
-          <aside class="hero-quote" aria-label="Quick quote form">
-            <div class="quote-card">
-              <div class="quote-head">
-                <div class="quote-title">Get a fast quote</div>
-                <div class="quote-badge">Reply window: same-day</div>
-              </div>
-              <p class="quote-note">Short form. High intent. Designed to book jobs quickly.</p>
-
-              <form id="quoteForm" action="#" method="post">
-                <div class="form-row">
-                  <div class="field">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" required />
-                  </div>
-                  <div class="field">
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" autocomplete="tel" required />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="field">
-                    <label for="type">Service</label>
-                    <select id="type" name="type" required>
-                      <option value="" selected disabled>Select...</option>
-                      <option>Residential (driveway + walk)</option>
-                      <option>Commercial (lot + entrances)</option>
-                      <option>Ice management (salt/de-ice)</option>
-                    </select>
-                  </div>
-                  <div class="field">
-                    <label for="area">Address / area</label>
-                    <input id="area" name="area" type="text" autocomplete="street-address" placeholder="Naperville, IL" required />
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label for="notes">Notes (optional)</label>
-                  <textarea id="notes" name="notes" placeholder="Driveway size, sidewalks, corner lot, timing needs, HOA/commercial details, etc."></textarea>
-                </div>
-
-                <button class="btn btn-primary" type="submit" style="width:100%;padding:12px 14px;">Request Quote</button>
-
-                <p class="fineprint">
-                  Template note: when you hand this off to an operator, replace phone/email and add their license/insurance details (if applicable).
-                </p>
-              </form>
+          <!-- RIGHT (NO EXTRA WRAPPER; matches your CSS) -->
+          <aside class="quote-card" aria-label="Quick quote form">
+            <div class="quote-head">
+              <div class="quote-title">Get a fast quote</div>
+              <div class="quote-badge">Reply window: same-day</div>
             </div>
+            <p class="quote-note">Short form. High intent. Designed to book jobs quickly.</p>
+
+            <form id="quoteForm" action="#" method="post">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="type">Service</label>
+                  <select id="type" name="type" required>
+                    <option value="" selected disabled>Select...</option>
+                    <option>Residential (driveway + walk)</option>
+                    <option>Commercial (lot + entrances)</option>
+                    <option>Ice management (salt/de-ice)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="area">Address / area</label>
+                  <input id="area" name="area" type="text" autocomplete="street-address" placeholder="Naperville, IL" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" name="notes" placeholder="Driveway size, sidewalks, corner lot, timing needs, HOA/commercial details, etc."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit" style="width:100%;padding:12px 14px;">Request Quote</button>
+
+              <p class="fineprint">
+                Template note: when you hand this off to an operator, replace phone/email and add their license/insurance details (if applicable).
+              </p>
+            </form>
           </aside>
         </div>
       </div>
@@ -351,7 +346,7 @@
     // Year
     document.querySelector('.year').textContent = new Date().getFullYear();
 
-    // Mobile menu (accessible)
+    // Mobile menu toggle (keep your existing CSS behavior)
     const menuBtn = document.querySelector('.menu-btn');
     const mobilePanel = document.querySelector('.mobile-panel');
     menuBtn.addEventListener('click', () => {
