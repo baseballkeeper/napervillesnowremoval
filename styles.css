@@ -307,7 +307,12 @@ input,select,textarea{
 select{ max-width:100%; }     /* optional safety */
 
 }
-textarea{min-height:92px;resize:vertical}
+textarea{
+  min-height:140px;   /* taller notes box */
+  resize:none;        /* remove drag handle */
+  overflow:auto;      /* allow scrolling if text is long */
+}
+
 input:focus,select:focus,textarea:focus{
   outline:none;
   border-color:var(--primary);
