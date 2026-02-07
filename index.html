@@ -6,6 +6,10 @@
 
   <title>Naperville Snow Removal | Fast, Reliable Snow & Ice Service</title>
   <meta name="description" content="Snow removal in Naperville, IL — driveway & sidewalk clearing, commercial plowing, and ice management. Request a quote and get scheduled fast." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- IMPORTANT: load your extracted CSS file -->
+  <link rel="stylesheet" href="./styles.css" />
 
   <!-- LocalBusiness schema (template placeholders) -->
   <script type="application/ld+json">
@@ -23,475 +27,13 @@
     "address": { "@type": "PostalAddress", "addressLocality": "Naperville", "addressRegion": "IL", "addressCountry": "US" }
   }
   </script>
-
-  <style>
-    :root{
-      --text:#0f172a;
-      --muted:#64748b;
-      --border:#e2e8f0;
-      --bg:#ffffff;
-      --surface:#f8fafc;
-      --surface2:#f1f5f9;
-
-      /* Premium evergreen (less generic than blue) */
-      --primary:#0f766e;       /* teal-700 */
-      --primary-dark:#115e59;  /* teal-800 */
-      --ring: rgba(15,118,110,.22);
-
-      --danger:#b91c1c;
-      --max:1180px;
-
-      --r12:12px;
-      --r16:16px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
-      line-height:1.55;
-      color:var(--text);
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-    }
-
-    a{color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:0 22px}
-
-    /* Header */
-    .site-header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
-    }
-    .header-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:18px;padding:14px 0;
-    }
-    .brand{
-      font-weight:800;
-      letter-spacing:-.3px;
-      text-decoration:none;
-      white-space:nowrap;
-      display:flex;align-items:center;gap:10px;
-    }
-    .brand-badge{
-      width:10px;height:10px;border-radius:99px;background:var(--primary);
-      box-shadow:0 0 0 4px rgba(15,118,110,.12);
-      flex:0 0 auto;
-    }
-    .nav{display:flex;gap:20px}
-    .nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:650;
-      font-size:14px;
-    }
-    .nav a:hover{color:var(--text)}
-    .header-cta{display:flex;align-items:center;gap:10px}
-    .phone{
-      text-decoration:none;
-      font-weight:800;
-      font-size:14px;
-      color:var(--text);
-      padding:8px 10px;
-      border:1px solid var(--border);
-      border-radius:10px;
-      background:linear-gradient(#fff, #fff);
-    }
-
-    .btn{
-      display:inline-block;
-      border-radius:10px;
-      padding:10px 14px;
-      font-weight:800;
-      font-size:14px;
-      text-decoration:none;
-      border:1px solid transparent;
-      cursor:pointer;
-      transition:transform .15s, box-shadow .15s, background .15s, border-color .15s;
-    }
-    .btn-primary{
-      background:var(--primary);
-      color:#fff;
-      box-shadow:0 6px 16px rgba(15,118,110,.14);
-    }
-    .btn-primary:hover{background:var(--primary-dark); transform: translateY(-1px)}
-    .btn-ghost{
-      background:#fff;
-      border-color:var(--border);
-      color:var(--text);
-    }
-    .btn-ghost:hover{border-color:#cbd5e1; background:var(--surface)}
-    .menu-btn{display:none;background:none;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-weight:800}
-
-    .mobile-panel{display:none;border-top:1px solid var(--border);padding:12px 0}
-    .mobile-panel a{display:block;padding:10px 0;text-decoration:none;color:var(--muted);font-weight:750}
-
-    /* Hero */
-    .hero{
-      background:
-        radial-gradient(1000px 320px at 20% -20%, rgba(15,118,110,.18), transparent 60%),
-        linear-gradient(to bottom, #fff 0%, var(--surface) 100%);
-      padding:36px 0 42px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr 420px;
-      gap:22px;
-      align-items:start;
-    }
-
-    /* Left hero: local “proof” + carousel */
-    .hero-left{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius: var(--r16);
-      overflow:hidden;
-      box-shadow: 0 12px 28px rgba(2,6,23,.05);
-    }
-    .hero-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      padding:18px 18px 14px;
-    }
-    .kicker{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.9px;
-      font-weight:900;
-      color:var(--primary);
-      margin-bottom:8px;
-    }
-    .h1{
-      font-size:42px;
-      line-height:1.12;
-      letter-spacing:-.9px;
-      font-weight:900;
-      margin-bottom:12px;
-      max-width: 720px;
-    }
-    .subhead{
-      color:var(--muted);
-      font-size:16px;
-      max-width: 760px;
-    }
-
-    .trustline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:12px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 12px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background: #fff;
-      color:#334155;
-      font-size:12px;
-      font-weight:800;
-      white-space:nowrap;
-    }
-    .dot{
-      width:7px;height:7px;border-radius:50%;
-      background:rgba(15,118,110,.6);
-    }
-
-    /* Carousel (fixed height, no “massive” images) */
-    .carousel{
-      position:relative;
-      height: 280px; /* key: fixed height */
-      background:#0b1220;
-    }
-    .carousel img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .carousel-overlay{
-      position:absolute; inset:auto 14px 14px 14px;
-      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
-    }
-    .overlay-card{
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(226,232,240,.85);
-      border-radius: 14px;
-      padding:10px 12px;
-      box-shadow: 0 10px 24px rgba(2,6,23,.16);
-      max-width: 72%;
-    }
-    .overlay-title{
-      font-weight:900;
-      letter-spacing:-.2px;
-      font-size:13px;
-      margin-bottom:2px;
-    }
-    .overlay-sub{
-      color:#475569;
-      font-size:12px;
-      font-weight:700;
-      line-height:1.35;
-    }
-
-    .carousel-controls{
-      display:flex; gap:8px; flex:0 0 auto;
-    }
-    .car-btn{
-      width:38px;height:38px;
-      border-radius:12px;
-      border:1px solid rgba(226,232,240,.9);
-      background: rgba(255,255,255,.92);
-      cursor:pointer;
-      font-weight:900;
-      font-size:18px;
-      line-height:1;
-      display:flex;align-items:center;justify-content:center;
-      transition: transform .15s, background .15s;
-    }
-    .car-btn:hover{transform: translateY(-1px); background:#fff}
-
-    .dots{
-      position:absolute;
-      left:14px; top:14px;
-      display:flex; gap:6px;
-      padding:8px 10px;
-      border-radius:999px;
-      background: rgba(15,23,42,.40);
-      backdrop-filter: blur(6px);
-    }
-    .dots button{
-      width:8px;height:8px;border-radius:99px;
-      border:0; cursor:pointer;
-      background: rgba(255,255,255,.45);
-    }
-    .dots button.is-active{background:#fff}
-
-    /* Right hero: quote card */
-    .quote-card{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius: var(--r16);
-      padding:16px;
-      box-shadow: 0 12px 28px rgba(2,6,23,.05);
-      position: sticky;
-      top: 76px;
-    }
-    .quote-head{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
-    .quote-title{
-      font-size:18px;font-weight:950;letter-spacing:-.3px;
-    }
-    .quote-badge{
-      font-size:12px;font-weight:950;
-      color: #0f172a;
-      background: #ecfeff;
-      border: 1px solid #a5f3fc;
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-    .quote-note{
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:12px;
-    }
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
-    label{font-size:12px;font-weight:900;color:#0f172a}
-    input,select,textarea{
-      font: inherit;
-      padding:10px 12px;
-      border-radius: 10px;
-      border:1.5px solid var(--border);
-      background:#fff;
-      font-size:14px;
-      transition: box-shadow .15s, border-color .15s;
-    }
-    textarea{min-height:92px;resize:vertical}
-    input:focus,select:focus,textarea:focus{
-      outline:none;
-      border-color:var(--primary);
-      box-shadow: 0 0 0 4px var(--ring);
-    }
-    .full{grid-column:1 / -1}
-    .fineprint{color:var(--muted); font-size:12px; margin-top:10px; line-height:1.55}
-
-    /* Offer bar inside hero-left */
-    .offer-bar{
-      border-top:1px solid var(--border);
-      background: linear-gradient(to right, rgba(15,118,110,.07), rgba(255,255,255,1));
-      padding:12px 18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .offer-text{
-      font-size:13px;
-      color:#334155;
-      font-weight:800;
-    }
-    .offer-text b{color:var(--text)}
-    .offer-actions{display:flex;gap:10px;align-items:center}
-
-    /* Sections */
-    .section{padding:44px 0}
-    .section.alt{background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
-    .h2{font-size:26px;font-weight:950;letter-spacing:-.5px}
-    .lead{color:var(--muted); font-size:15px; max-width: 700px}
-
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius: var(--r12);
-      padding:16px;
-      transition: transform .15s, box-shadow .15s, border-color .15s;
-    }
-    .card:hover{transform: translateY(-2px); border-color: rgba(15,118,110,.35); box-shadow: 0 12px 26px rgba(2,6,23,.06)}
-    .card h3{font-size:16px;font-weight:950;margin-bottom:6px;letter-spacing:-.2px}
-    .card p{color:var(--muted);font-size:13px;line-height:1.6}
-    .tag{
-      display:inline-block;margin-top:10px;
-      font-size:11px;font-weight:950;letter-spacing:.3px;text-transform:uppercase;
-      color:#0f172a;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      padding:5px 10px;border-radius:999px;
-    }
-
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .steps{display:flex;flex-direction:column;gap:12px;margin-top:10px}
-    .step{display:flex;gap:12px;align-items:flex-start}
-    .num{
-      width:32px;height:32px;border-radius:999px;
-      background:var(--primary);color:#fff;font-weight:950;
-      display:flex;align-items:center;justify-content:center;
-      flex:0 0 auto;
-    }
-    .txt{color:var(--muted);font-size:13px;line-height:1.6;padding-top:2px}
-    .txt b{color:var(--text)}
-    .notice{
-      background:#fff7ed;
-      border:1px solid #fed7aa;
-      border-radius: var(--r12);
-      padding:14px 16px;
-      color:#9a3412;
-      font-size:13px;
-      line-height:1.55;
-    }
-
-    /* Contact band (higher) */
-    .contact-band{
-      background: linear-gradient(to right, rgba(15,118,110,.10), rgba(255,255,255,1));
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      padding:26px 0;
-    }
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .contact-card{
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius: var(--r16);
-      padding:16px;
-      box-shadow: 0 12px 28px rgba(2,6,23,.04);
-    }
-    .contact-card h3{font-size:16px;font-weight:950;margin-bottom:6px}
-    .contact-card p{color:var(--muted);font-size:13px;line-height:1.6}
-    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-
-    /* FAQ */
-    .faq{max-width: 860px}
-    details{border-bottom:1px solid var(--border);padding:14px 0}
-    details:first-child{border-top:1px solid var(--border)}
-    summary{
-      font-weight:950;
-      cursor:pointer;
-      list-style:none;
-      display:flex;justify-content:space-between;align-items:center;
-      gap:12px;
-      font-size:15px;
-    }
-    summary::-webkit-details-marker{display:none}
-    summary:after{content:'+';font-size:20px;color:var(--muted);font-weight:700}
-    details[open] summary:after{content:'−'}
-    details p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.65}
-
-    /* Footer */
-    .footer{
-      background: var(--surface);
-      border-top:1px solid var(--border);
-      padding:28px 0;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .footer-grid{display:grid;grid-template-columns: 2fr 2fr 1fr;gap:18px}
-    .footer a{text-decoration:none;color:var(--muted)}
-    .footer a:hover{color:var(--text)}
-
-    /* Mobile call bar */
-    .callbar{
-      display:none;
-      position:fixed;
-      left:0;right:0;bottom:0;
-      background:#fff;
-      border-top:1px solid var(--border);
-      padding:10px 12px;
-      z-index:60;
-    }
-    .callbar-inner{
-      display:flex; gap:10px;
-    }
-    .callbar .btn{flex:1;text-align:center;padding:12px 14px}
-
-    /* Responsive */
-    @media (max-width: 1024px){
-      .hero-grid{grid-template-columns:1fr; }
-      .quote-card{position:relative;top:auto}
-      .carousel{height: 260px}
-    }
-    @media (max-width: 768px){
-      .container{padding:0 16px}
-      .nav{display:none}
-      .menu-btn{display:inline-block}
-      .mobile-panel.active{display:block}
-      .header-cta .phone{display:none}
-
-      .hero{padding:26px 0 34px}
-      .h1{font-size:32px}
-      .carousel{height: 230px}
-      .grid3{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
-      .contact-grid{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr}
-
-      .callbar{display:block}
-      body{padding-bottom:70px} /* prevent callbar overlap */
-    }
-  </style>
 </head>
 
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
       <div class="header-inner">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Naperville Snow Removal home">
           <span class="brand-badge" aria-hidden="true"></span>
           Naperville Snow Removal
         </a>
@@ -504,13 +46,15 @@
         </nav>
 
         <div class="header-cta">
-          <a class="phone" href="tel:+16304451780">‪(630) 445-1780‬</a>
+          <a class="phone" href="tel:+16304451780" aria-label="Call (630) 445-1780">(630) 445-1780</a>
           <a class="btn btn-primary" href="#contact">Get Scheduled</a>
-          <button class="menu-btn" type="button" onclick="document.querySelector('.mobile-panel').classList.toggle('active')">Menu</button>
+          <button class="menu-btn" type="button" aria-controls="mobilePanel" aria-expanded="false">
+            Menu
+          </button>
         </div>
       </div>
 
-      <div class="mobile-panel">
+      <div class="mobile-panel" id="mobilePanel">
         <a href="#services">Services</a>
         <a href="#areas">Service Area</a>
         <a href="#contact">Contact</a>
@@ -519,7 +63,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -550,7 +94,6 @@
                 <button type="button" aria-label="Photo 2"></button>
               </div>
 
-              <!-- IMPORTANT: repo folder is Images (capital I) per your screenshot -->
               <img id="heroImage" src="/images/naperville-1.jpg" alt="Downtown Naperville in winter" loading="eager"/>
 
               <div class="carousel-overlay">
@@ -571,59 +114,61 @@
                 <b>Need service before the next storm?</b> Request a quote and we’ll confirm availability quickly.
               </div>
               <div class="offer-actions">
-                <a class="btn btn-primary" href="#contact">Request Quote</a>
+                <a class="btn btn-primary" href="#quoteForm">Request Quote</a>
                 <a class="btn btn-ghost" href="tel:+16304451780">Call Now</a>
               </div>
             </div>
           </div>
 
-          <!-- RIGHT -->
-          <aside class="quote-card" aria-label="Quick quote form">
-            <div class="quote-head">
-              <div class="quote-title">Get a fast quote</div>
-              <div class="quote-badge">Reply window: same-day</div>
+          <!-- RIGHT (wrapper helps layout) -->
+          <aside class="hero-quote" aria-label="Quick quote form">
+            <div class="quote-card">
+              <div class="quote-head">
+                <div class="quote-title">Get a fast quote</div>
+                <div class="quote-badge">Reply window: same-day</div>
+              </div>
+              <p class="quote-note">Short form. High intent. Designed to book jobs quickly.</p>
+
+              <form id="quoteForm" action="#" method="post">
+                <div class="form-row">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required />
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="type">Service</label>
+                    <select id="type" name="type" required>
+                      <option value="" selected disabled>Select...</option>
+                      <option>Residential (driveway + walk)</option>
+                      <option>Commercial (lot + entrances)</option>
+                      <option>Ice management (salt/de-ice)</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="area">Address / area</label>
+                    <input id="area" name="area" type="text" autocomplete="street-address" placeholder="Naperville, IL" required />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="notes">Notes (optional)</label>
+                  <textarea id="notes" name="notes" placeholder="Driveway size, sidewalks, corner lot, timing needs, HOA/commercial details, etc."></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="submit" style="width:100%;padding:12px 14px;">Request Quote</button>
+
+                <p class="fineprint">
+                  Template note: when you hand this off to an operator, replace phone/email and add their license/insurance details (if applicable).
+                </p>
+              </form>
             </div>
-            <p class="quote-note">Short form. High intent. Designed to book jobs quickly.</p>
-
-            <form id="quoteForm" action="#" method="post">
-              <div class="form-row">
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required />
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" autocomplete="tel" required />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="type">Service</label>
-                  <select id="type" name="type" required>
-                    <option value="" selected disabled>Select...</option>
-                    <option>Residential (driveway + walk)</option>
-                    <option>Commercial (lot + entrances)</option>
-                    <option>Ice management (salt/de-ice)</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="area">Address / area</label>
-                  <input id="area" name="area" type="text" autocomplete="street-address" placeholder="Naperville, IL" required />
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="notes">Notes (optional)</label>
-                <textarea id="notes" name="notes" placeholder="Driveway size, sidewalks, corner lot, timing needs, HOA/commercial details, etc."></textarea>
-              </div>
-
-              <button class="btn btn-primary" type="submit" style="width:100%;padding:12px 14px;">Request Quote</button>
-
-              <p class="fineprint">
-                Template note: when you hand this off to an operator, replace phone/email and add their license/insurance details (if applicable).
-              </p>
-            </form>
           </aside>
         </div>
       </div>
@@ -664,7 +209,7 @@
       </div>
     </section>
 
-    <!-- CONTACT HIGHER + SALESY -->
+    <!-- CONTACT -->
     <section class="contact-band" id="contact">
       <div class="container">
         <div class="contact-grid">
@@ -805,6 +350,14 @@
   <script>
     // Year
     document.querySelector('.year').textContent = new Date().getFullYear();
+
+    // Mobile menu (accessible)
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobilePanel = document.querySelector('.mobile-panel');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobilePanel.classList.toggle('active');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
 
     // Quote form demo submit
     const form = document.getElementById('quoteForm');
