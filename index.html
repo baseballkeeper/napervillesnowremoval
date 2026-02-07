@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Naperville Snow Removal | Professional Snow & Ice Management</title>
-  <meta name="description" content="Premium snow removal in Naperville, IL for homes and properties. Reliable crews, clear communication, and service plans built for winter weather.">
+  <title>Naperville Snow Removal | Fast, Reliable Snow & Ice Service</title>
+  <meta name="description" content="Snow removal in Naperville, IL — driveway & sidewalk clearing, commercial plowing, and ice management. Request a quote and get scheduled fast." />
 
-  <!-- LocalBusiness schema -->
+  <!-- LocalBusiness schema (template placeholders) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,627 +25,496 @@
   </script>
 
   <style>
-    :root {
-      --text: #0f172a;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --surface: #f8fafc;
-      --surface2: #f1f5f9;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #3b82f6;
-      --accent: #0ea5e9;
-      --max-width: 1280px;
+    :root{
+      --text:#0f172a;
+      --muted:#64748b;
+      --border:#e2e8f0;
+      --bg:#ffffff;
+      --surface:#f8fafc;
+      --surface2:#f1f5f9;
 
-      /* Tight spacing controls */
-      --section-pad: 72px;     /* was 96 */
-      --section-pad-sm: 52px;  /* was 64 */
-      --hero-pad-top: 64px;    /* was 80 */
-      --hero-pad-btm: 72px;    /* was 96 */
+      /* Premium evergreen (less generic than blue) */
+      --primary:#0f766e;       /* teal-700 */
+      --primary-dark:#115e59;  /* teal-800 */
+      --ring: rgba(15,118,110,.22);
+
+      --danger:#b91c1c;
+      --max:1180px;
+
+      --r12:12px;
+      --r16:16px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      line-height:1.55;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      background: #fff;
-    }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 28px; /* slightly tighter than 32 */
-    }
+    a{color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 22px}
 
     /* Header */
-    .site-header {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0; /* was 24 */
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.95);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:18px;padding:14px 0;
+    }
+    .brand{
+      font-weight:800;
+      letter-spacing:-.3px;
+      text-decoration:none;
+      white-space:nowrap;
+      display:flex;align-items:center;gap:10px;
+    }
+    .brand-badge{
+      width:10px;height:10px;border-radius:99px;background:var(--primary);
+      box-shadow:0 0 0 4px rgba(15,118,110,.12);
+      flex:0 0 auto;
+    }
+    .nav{display:flex;gap:20px}
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:650;
+      font-size:14px;
+    }
+    .nav a:hover{color:var(--text)}
+    .header-cta{display:flex;align-items:center;gap:10px}
+    .phone{
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+      color:var(--text);
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:linear-gradient(#fff, #fff);
     }
 
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px; /* was 40 */
+    .btn{
+      display:inline-block;
+      border-radius:10px;
+      padding:10px 14px;
+      font-weight:800;
+      font-size:14px;
+      text-decoration:none;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:transform .15s, box-shadow .15s, background .15s, border-color .15s;
     }
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 6px 16px rgba(15,118,110,.14);
+    }
+    .btn-primary:hover{background:var(--primary-dark); transform: translateY(-1px)}
+    .btn-ghost{
+      background:#fff;
+      border-color:var(--border);
+      color:var(--text);
+    }
+    .btn-ghost:hover{border-color:#cbd5e1; background:var(--surface)}
+    .menu-btn{display:none;background:none;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-weight:800}
 
-    .brand {
-      font-weight: 700;
-      font-size: 18px; /* was 19 */
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.3px;
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      gap: 26px; /* was 32 */
-    }
-
-    .nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 14px; /* was 15 */
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: var(--text);
-    }
-
-    .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 14px; /* was 16 */
-    }
-
-    .phone {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px; /* was 15 */
-    }
-
-    .btn {
-      padding: 10px 18px; /* was 11 22 */
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px; /* was 15 */
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1.5px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--text);
-      background: var(--surface);
-    }
-
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--text);
-    }
-
-    .mobile-panel {
-      display: none;
-    }
+    .mobile-panel{display:none;border-top:1px solid var(--border);padding:12px 0}
+    .mobile-panel a{display:block;padding:10px 0;text-decoration:none;color:var(--muted);font-weight:750}
 
     /* Hero */
-    .hero {
-      padding: var(--hero-pad-top) 0 var(--hero-pad-btm);
-      background: linear-gradient(to bottom, #fff 0%, var(--surface) 100%);
+    .hero{
+      background:
+        radial-gradient(1000px 320px at 20% -20%, rgba(15,118,110,.18), transparent 60%),
+        linear-gradient(to bottom, #fff 0%, var(--surface) 100%);
+      padding:36px 0 42px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr 420px;
+      gap:22px;
+      align-items:start;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 420px;
-      gap: 48px; /* was 64 */
-      align-items: start;
+    /* Left hero: local “proof” + carousel */
+    .hero-left{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius: var(--r16);
+      overflow:hidden;
+      box-shadow: 0 12px 28px rgba(2,6,23,.05);
+    }
+    .hero-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 18px 14px;
+    }
+    .kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+      font-weight:900;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+    .h1{
+      font-size:42px;
+      line-height:1.12;
+      letter-spacing:-.9px;
+      font-weight:900;
+      margin-bottom:12px;
+      max-width: 720px;
+    }
+    .subhead{
+      color:var(--muted);
+      font-size:16px;
+      max-width: 760px;
     }
 
-    .kicker {
-      font-size: 13px; /* was 14 */
-      color: var(--primary);
-      margin-bottom: 14px; /* was 20 */
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      font-weight: 700;
+    .trustline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
     }
-
-    .h1 {
-      font-size: 48px; /* was 52 */
-      line-height: 1.12;
-      font-weight: 750;
-      margin-bottom: 18px; /* was 24 */
-      letter-spacing: -1px;
-      color: var(--text);
-    }
-
-    .subhead {
-      font-size: 18px; /* was 19 */
-      line-height: 1.6;
-      color: var(--text-light);
-      margin-bottom: 26px; /* was 36 */
-      max-width: 580px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px; /* was 14 */
-      margin-bottom: 24px; /* was 40 */
-    }
-
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px; /* was 10 */
-    }
-
-    .pill {
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
       background: #fff;
-      padding: 7px 14px; /* was 8 16 */
-      border-radius: 999px;
-      font-size: 12px; /* was 13 */
-      color: var(--text-light);
-      border: 1.5px solid var(--border);
-      font-weight: 600;
+      color:#334155;
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .dot{
+      width:7px;height:7px;border-radius:50%;
+      background:rgba(15,118,110,.6);
     }
 
-    /* Form Card */
-    .form-card {
-      background: #fff;
-      padding: 22px; /* was 26 */
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 15px rgba(0, 0, 0, 0.03);
+    /* Carousel (fixed height, no “massive” images) */
+    .carousel{
+      position:relative;
+      height: 280px; /* key: fixed height */
+      background:#0b1220;
+    }
+    .carousel img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .carousel-overlay{
+      position:absolute; inset:auto 14px 14px 14px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+    }
+    .overlay-card{
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(226,232,240,.85);
+      border-radius: 14px;
+      padding:10px 12px;
+      box-shadow: 0 10px 24px rgba(2,6,23,.16);
+      max-width: 72%;
+    }
+    .overlay-title{
+      font-weight:900;
+      letter-spacing:-.2px;
+      font-size:13px;
+      margin-bottom:2px;
+    }
+    .overlay-sub{
+      color:#475569;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.35;
     }
 
-    .form-title {
-      font-size: 22px; /* was 24 */
-      font-weight: 750;
-      margin-bottom: 6px;
-      letter-spacing: -0.3px;
+    .carousel-controls{
+      display:flex; gap:8px; flex:0 0 auto;
     }
+    .car-btn{
+      width:38px;height:38px;
+      border-radius:12px;
+      border:1px solid rgba(226,232,240,.9);
+      background: rgba(255,255,255,.92);
+      cursor:pointer;
+      font-weight:900;
+      font-size:18px;
+      line-height:1;
+      display:flex;align-items:center;justify-content:center;
+      transition: transform .15s, background .15s;
+    }
+    .car-btn:hover{transform: translateY(-1px); background:#fff}
 
-    .form-note {
-      font-size: 14px; /* was 15 */
-      color: var(--text-light);
-      margin-bottom: 18px; /* was 28 */
-      line-height: 1.6;
+    .dots{
+      position:absolute;
+      left:14px; top:14px;
+      display:flex; gap:6px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(15,23,42,.40);
+      backdrop-filter: blur(6px);
     }
+    .dots button{
+      width:8px;height:8px;border-radius:99px;
+      border:0; cursor:pointer;
+      background: rgba(255,255,255,.45);
+    }
+    .dots button.is-active{background:#fff}
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px; /* was 14 */
-      margin-bottom: 12px; /* was 14 */
+    /* Right hero: quote card */
+    .quote-card{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius: var(--r16);
+      padding:16px;
+      box-shadow: 0 12px 28px rgba(2,6,23,.05);
+      position: sticky;
+      top: 76px;
     }
+    .quote-head{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .quote-title{
+      font-size:18px;font-weight:950;letter-spacing:-.3px;
+    }
+    .quote-badge{
+      font-size:12px;font-weight:950;
+      color: #0f172a;
+      background: #ecfeff;
+      border: 1px solid #a5f3fc;
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .quote-note{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    label{font-size:12px;font-weight:900;color:#0f172a}
+    input,select,textarea{
+      font: inherit;
+      padding:10px 12px;
+      border-radius: 10px;
+      border:1.5px solid var(--border);
+      background:#fff;
+      font-size:14px;
+      transition: box-shadow .15s, border-color .15s;
+    }
+    textarea{min-height:92px;resize:vertical}
+    input:focus,select:focus,textarea:focus{
+      outline:none;
+      border-color:var(--primary);
+      box-shadow: 0 0 0 4px var(--ring);
+    }
+    .full{grid-column:1 / -1}
+    .fineprint{color:var(--muted); font-size:12px; margin-top:10px; line-height:1.55}
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px; /* was 8 */
+    /* Offer bar inside hero-left */
+    .offer-bar{
+      border-top:1px solid var(--border);
+      background: linear-gradient(to right, rgba(15,118,110,.07), rgba(255,255,255,1));
+      padding:12px 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
     }
-
-    .field label {
-      font-size: 13px; /* was 14 */
-      font-weight: 700;
-      color: var(--text);
+    .offer-text{
+      font-size:13px;
+      color:#334155;
+      font-weight:800;
     }
-
-    .field input,
-    .field select,
-    .field textarea {
-      padding: 10px 12px; /* was 11 14 */
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      font-size: 14px; /* was 15 */
-      font-family: inherit;
-      background: #fff;
-      transition: all 0.2s;
-    }
-
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-    }
-
-    .field textarea {
-      min-height: 92px; /* was 110 */
-      resize: vertical;
-    }
-
-    .smallprint {
-      font-size: 12px; /* was 13 */
-      color: var(--text-light);
-      line-height: 1.6;
-      margin-top: 10px; /* was 14 */
-    }
+    .offer-text b{color:var(--text)}
+    .offer-actions{display:flex;gap:10px;align-items:center}
 
     /* Sections */
-    .section {
-      padding: var(--section-pad) 0;
-    }
+    .section{padding:44px 0}
+    .section.alt{background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:18px}
+    .h2{font-size:26px;font-weight:950;letter-spacing:-.5px}
+    .lead{color:var(--muted); font-size:15px; max-width: 700px}
 
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 40px; /* was 56 */
-      gap: 32px;
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius: var(--r12);
+      padding:16px;
+      transition: transform .15s, box-shadow .15s, border-color .15s;
     }
-
-    .h2 {
-      font-size: 32px; /* was 36 */
-      font-weight: 750;
-      margin-bottom: 10px; /* was 14 */
-      letter-spacing: -0.5px;
-      color: var(--text);
-    }
-
-    .lead {
-      font-size: 17px; /* was 19 */
-      color: var(--text-light);
-      line-height: 1.6;
-      max-width: 620px;
-    }
-
-    .grid3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px; /* was 28 */
-    }
-
-    .card {
-      background: #fff;
-      padding: 26px; /* was 32 */
-      border-radius: 12px;
+    .card:hover{transform: translateY(-2px); border-color: rgba(15,118,110,.35); box-shadow: 0 12px 26px rgba(2,6,23,.06)}
+    .card h3{font-size:16px;font-weight:950;margin-bottom:6px;letter-spacing:-.2px}
+    .card p{color:var(--muted);font-size:13px;line-height:1.6}
+    .tag{
+      display:inline-block;margin-top:10px;
+      font-size:11px;font-weight:950;letter-spacing:.3px;text-transform:uppercase;
+      color:#0f172a;
+      background: var(--surface2);
       border: 1px solid var(--border);
-      transition: all 0.3s;
+      padding:5px 10px;border-radius:999px;
     }
 
-    .card:hover {
-      border-color: var(--primary-light);
-      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.08);
-      transform: translateY(-2px);
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .steps{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .num{
+      width:32px;height:32px;border-radius:999px;
+      background:var(--primary);color:#fff;font-weight:950;
+      display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;
+    }
+    .txt{color:var(--muted);font-size:13px;line-height:1.6;padding-top:2px}
+    .txt b{color:var(--text)}
+    .notice{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      border-radius: var(--r12);
+      padding:14px 16px;
+      color:#9a3412;
+      font-size:13px;
+      line-height:1.55;
     }
 
-    .card h3 {
-      font-size: 18px; /* was 19 */
-      font-weight: 750;
-      margin-bottom: 8px; /* was 10 */
-      letter-spacing: -0.2px;
+    /* Contact band (higher) */
+    .contact-band{
+      background: linear-gradient(to right, rgba(15,118,110,.10), rgba(255,255,255,1));
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:26px 0;
     }
-
-    .card p {
-      color: var(--text-light);
-      font-size: 14px; /* was 15 */
-      line-height: 1.65;
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap:14px;
+      align-items:stretch;
     }
-
-    .tag {
-      display: inline-block;
-      margin-top: 12px; /* was 14 */
-      padding: 5px 12px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 11px; /* was 12 */
-      color: var(--text-light);
-      font-weight: 750;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+    .contact-card{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius: var(--r16);
+      padding:16px;
+      box-shadow: 0 12px 28px rgba(2,6,23,.04);
     }
-
-    .notice {
-      background: #fef9c3;
-      border: 1px solid #fde047;
-      padding: 16px 18px; /* was 18 20 */
-      border-radius: 10px;
-      font-size: 13px; /* was 14 */
-      color: #854d0e;
-      line-height: 1.55;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px; /* was 28 */
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 18px; /* was 24 */
-      margin-top: 18px; /* was 28 */
-    }
-
-    .step {
-      display: flex;
-      gap: 14px; /* was 18 */
-      align-items: start;
-    }
-
-    .num {
-      width: 34px; /* was 36 */
-      height: 34px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .txt {
-      font-size: 14px; /* was 15 */
-      line-height: 1.65;
-      color: var(--text-light);
-      padding-top: 2px;
-    }
-
-    .txt b {
-      color: var(--text);
-      font-weight: 700;
-    }
+    .contact-card h3{font-size:16px;font-weight:950;margin-bottom:6px}
+    .contact-card p{color:var(--muted);font-size:13px;line-height:1.6}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 
     /* FAQ */
-    .faq {
-      max-width: 820px;
+    .faq{max-width: 860px}
+    details{border-bottom:1px solid var(--border);padding:14px 0}
+    details:first-child{border-top:1px solid var(--border)}
+    summary{
+      font-weight:950;
+      cursor:pointer;
+      list-style:none;
+      display:flex;justify-content:space-between;align-items:center;
+      gap:12px;
+      font-size:15px;
     }
-
-    details {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0; /* was 24 */
-    }
-
-    details:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    summary {
-      font-weight: 700;
-      font-size: 16px; /* was 17 */
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text);
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary:after {
-      content: '+';
-      font-size: 22px; /* was 24 */
-      color: var(--text-light);
-      font-weight: 300;
-      margin-left: 14px;
-    }
-
-    details[open] summary:after {
-      content: '−';
-    }
-
-    details p {
-      margin-top: 10px; /* was 14 */
-      color: var(--text-light);
-      font-size: 14px; /* was 15 */
-      line-height: 1.65;
-      padding-right: 26px; /* was 40 */
-    }
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:'+';font-size:20px;color:var(--muted);font-weight:700}
+    details[open] summary:after{content:'−'}
+    details p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.65}
 
     /* Footer */
-    .footer {
+    .footer{
       background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 44px 0; /* was 56 */
+      border-top:1px solid var(--border);
+      padding:28px 0;
+      font-size:13px;
+      color:var(--muted);
     }
+    .footer-grid{display:grid;grid-template-columns: 2fr 2fr 1fr;gap:18px}
+    .footer a{text-decoration:none;color:var(--muted)}
+    .footer a:hover{color:var(--text)}
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 2fr 1fr;
-      gap: 32px; /* was 40 */
-      font-size: 13px; /* was 14 */
-      color: var(--text-light);
+    /* Mobile call bar */
+    .callbar{
+      display:none;
+      position:fixed;
+      left:0;right:0;bottom:0;
+      background:#fff;
+      border-top:1px solid var(--border);
+      padding:10px 12px;
+      z-index:60;
     }
-
-    .footer a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.2s;
+    .callbar-inner{
+      display:flex; gap:10px;
     }
-
-    .footer a:hover {
-      color: var(--text);
-    }
+    .callbar .btn{flex:1;text-align:center;padding:12px 14px}
 
     /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 34px; /* tighter */
-      }
-
-      .form-card {
-        max-width: 560px;
-      }
+    @media (max-width: 1024px){
+      .hero-grid{grid-template-columns:1fr; }
+      .quote-card{position:relative;top:auto}
+      .carousel{height: 260px}
     }
+    @media (max-width: 768px){
+      .container{padding:0 16px}
+      .nav{display:none}
+      .menu-btn{display:inline-block}
+      .mobile-panel.active{display:block}
+      .header-cta .phone{display:none}
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 18px;
-      }
+      .hero{padding:26px 0 34px}
+      .h1{font-size:32px}
+      .carousel{height: 230px}
+      .grid3{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
 
-      .nav {
-        display: none;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .mobile-panel {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        padding: 18px 0;
-        border-top: 1px solid var(--border);
-        margin-top: 18px;
-      }
-
-      .mobile-panel.active {
-        display: flex;
-      }
-
-      .mobile-panel a {
-        color: var(--text-light);
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 600;
-      }
-
-      .mobile-panel a.active {
-        color: var(--text);
-      }
-
-      .h1 {
-        font-size: 36px;
-        letter-spacing: -0.7px;
-      }
-
-      .subhead {
-        font-size: 16px;
-      }
-
-      .hero {
-        padding: 52px 0 58px; /* tighter */
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        margin-bottom: 18px;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .grid3 {
-        grid-template-columns: 1fr;
-      }
-
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: var(--section-pad-sm) 0;
-      }
-
-      .section-head {
-        flex-direction: column;
-        margin-bottom: 30px;
-      }
-
-      .h2 {
-        font-size: 28px;
-      }
-
-      .header-cta .phone {
-        display: none;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
+      .callbar{display:block}
+      body{padding-bottom:70px} /* prevent callbar overlap */
     }
   </style>
 </head>
-<body>
 
+<body>
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a class="brand" href="index.html">Naperville Snow Removal</a>
+        <a class="brand" href="index.html">
+          <span class="brand-badge" aria-hidden="true"></span>
+          Naperville Snow Removal
+        </a>
 
         <nav class="nav" aria-label="Primary">
-          <a class="active" href="index.html">Home</a>
           <a href="#services">Services</a>
           <a href="#areas">Service Area</a>
           <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
         </nav>
 
         <div class="header-cta">
           <a class="phone" href="tel:+16305550123">(630) 555-0123</a>
-          <a class="btn btn-primary" href="#contact">Request a Quote</a>
+          <a class="btn btn-primary" href="#contact">Get Scheduled</a>
           <button class="menu-btn" type="button" onclick="document.querySelector('.mobile-panel').classList.toggle('active')">Menu</button>
         </div>
       </div>
 
       <div class="mobile-panel">
-        <a class="active" href="index.html">Home</a>
         <a href="#services">Services</a>
         <a href="#areas">Service Area</a>
         <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
       </div>
     </div>
   </header>
@@ -654,46 +523,69 @@
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-card">
+          <!-- LEFT -->
+          <div class="hero-left">
+            <div class="hero-top">
+              <div>
+                <div class="kicker">Naperville, IL • Snow & ice service that communicates</div>
+                <h1 class="h1">A winter-ready driveway — without chasing contractors.</h1>
+                <p class="subhead">
+                  This site connects Naperville homeowners and property managers with a snow removal operator who can
+                  <b>show up on route</b>, <b>confirm completion</b>, and <b>stay accountable</b> during storms.
+                </p>
 
-<div class="hero-card">
-  <div class="carousel" aria-label="Naperville winter photos">
-    <div class="carousel-track">
-      <div class="carousel-slide is-active">
-        <img src="images/naperville-1.jpg" alt="Downtown Naperville in winter" loading="eager">
-      </div>
-      <div class="carousel-slide">
-        <img src="images/naperville-2.jpg" alt="Snowy neighborhood street in Naperville" loading="lazy">
-      </div>
-      <div class="carousel-slide">
-        <img src="images/naperville-3.jpg" alt="Driveway snow removal in Naperville" loading="lazy">
-      </div>
-    </div>
+                <div class="trustline" aria-label="Trust signals">
+                  <span class="pill"><span class="dot" aria-hidden="true"></span> Route-based service</span>
+                  <span class="pill"><span class="dot" aria-hidden="true"></span> Clear scope & timing</span>
+                  <span class="pill"><span class="dot" aria-hidden="true"></span> Driveways + sidewalks</span>
+                  <span class="pill"><span class="dot" aria-hidden="true"></span> Commercial plans</span>
+                </div>
+              </div>
+            </div>
 
-    <button class="carousel-btn prev" type="button" aria-label="Previous photo">‹</button>
-    <button class="carousel-btn next" type="button" aria-label="Next photo">›</button>
+            <!-- Carousel -->
+            <div class="carousel" aria-label="Naperville winter photos">
+              <div class="dots" aria-label="Carousel navigation">
+                <button class="is-active" type="button" aria-label="Photo 1"></button>
+                <button type="button" aria-label="Photo 2"></button>
+              </div>
 
-    <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
-      <button class="dot is-active" type="button" aria-label="Go to photo 1"></button>
-      <button class="dot" type="button" aria-label="Go to photo 2"></button>
-      <button class="dot" type="button" aria-label="Go to photo 3"></button>
-    </div>
-  </div>
+              <!-- IMPORTANT: repo folder is Images (capital I) per your screenshot -->
+              <img id="heroImage" src="/Images/naperville-1.jpg" alt="Downtown Naperville in winter" loading="eager"/>
 
-  <div class="kicker">Premium winter service • Naperville, IL</div>
-  <h1 class="h1">Professional snow removal that shows up and stays accountable.</h1>
-  
-</div>
+              <div class="carousel-overlay">
+                <div class="overlay-card">
+                  <div class="overlay-title">Naperville-first routing</div>
+                  <div class="overlay-sub">Priority service near downtown, south Naperville, and main corridors based on availability.</div>
+                </div>
 
+                <div class="carousel-controls">
+                  <button class="car-btn" type="button" id="prevBtn" aria-label="Previous photo">‹</button>
+                  <button class="car-btn" type="button" id="nextBtn" aria-label="Next photo">›</button>
+                </div>
+              </div>
+            </div>
 
-
+            <div class="offer-bar">
+              <div class="offer-text">
+                <b>Need service before the next storm?</b> Request a quote and we’ll confirm availability quickly.
+              </div>
+              <div class="offer-actions">
+                <a class="btn btn-primary" href="#contact">Request Quote</a>
+                <a class="btn btn-ghost" href="tel:+16305550123">Call Now</a>
+              </div>
+            </div>
           </div>
 
-          <aside class="form-card" aria-label="Quick quote form">
-            <h2 class="form-title">Get a fast quote</h2>
-            <p class="form-note">Tell us what you need. We'll respond quickly during business hours.</p>
+          <!-- RIGHT -->
+          <aside class="quote-card" aria-label="Quick quote form">
+            <div class="quote-head">
+              <div class="quote-title">Get a fast quote</div>
+              <div class="quote-badge">Reply window: same-day</div>
+            </div>
+            <p class="quote-note">Short form. High intent. Designed to book jobs quickly.</p>
 
-            <form action="#" method="post">
+            <form id="quoteForm" action="#" method="post">
               <div class="form-row">
                 <div class="field">
                   <label for="name">Name</label>
@@ -707,29 +599,29 @@
 
               <div class="form-row">
                 <div class="field">
-                  <label for="type">Service type</label>
+                  <label for="type">Service</label>
                   <select id="type" name="type" required>
                     <option value="" selected disabled>Select...</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                    <option>Ice management</option>
+                    <option>Residential (driveway + walk)</option>
+                    <option>Commercial (lot + entrances)</option>
+                    <option>Ice management (salt/de-ice)</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="area">Address / Area</label>
+                  <label for="area">Address / area</label>
                   <input id="area" name="area" type="text" autocomplete="street-address" placeholder="Naperville, IL" required />
                 </div>
               </div>
 
               <div class="field">
-                <label for="notes">Notes</label>
-                <textarea id="notes" name="notes" placeholder="Driveway size, lot size, sidewalks, timing needs, etc."></textarea>
+                <label for="notes">Notes (optional)</label>
+                <textarea id="notes" name="notes" placeholder="Driveway size, sidewalks, corner lot, timing needs, HOA/commercial details, etc."></textarea>
               </div>
 
-              <button class="btn btn-primary" type="submit">Request Quote</button>
+              <button class="btn btn-primary" type="submit" style="width:100%;padding:12px 14px;">Request Quote</button>
 
-              <p class="smallprint">
-                For active storms, response windows may vary based on routing and existing service plans.
+              <p class="fineprint">
+                Template note: when you hand this off to an operator, replace phone/email and add their license/insurance details (if applicable).
               </p>
             </form>
           </aside>
@@ -737,162 +629,147 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2 class="h2">Services built for reliability</h2>
-            <p class="lead">Clear scope. Professional crews. A process you can count on when weather hits.</p>
+            <h2 class="h2">What we can help with</h2>
+            <p class="lead">Keep it simple: clear scope, fast scheduling, and reliable follow-through when winter hits.</p>
           </div>
         </div>
 
         <div class="grid3">
           <div class="card">
             <h3>Residential snow removal</h3>
-            <p>Driveways, sidewalks, and steps handled with consistent service standards.</p>
+            <p>Driveways, sidewalks, and steps. Great for homeowners who want predictable service without babysitting.</p>
             <span class="tag">Homeowners</span>
           </div>
           <div class="card">
-            <h3>Commercial snow plowing</h3>
-            <p>Lots, entrances, and pedestrian areas — service plans for properties that can't fall behind.</p>
+            <h3>Commercial plowing</h3>
+            <p>Lots, entrances, and pedestrian areas. Built for properties that can’t fall behind during storms.</p>
             <span class="tag">Property managers</span>
           </div>
           <div class="card">
             <h3>Ice management</h3>
-            <p>Salting and de-icing options to keep walkways and access points safer.</p>
-            <span class="tag">Risk reduction</span>
+            <p>Salting and de-icing options to reduce slip risk and keep access points safer.</p>
+            <span class="tag">Safety</span>
           </div>
         </div>
 
-        <div style="margin-top:22px" class="notice">
-          <b>Note for template use:</b> When you shop this to a company, replace the "licensed & insured" line with their exact status and add their real service list (e.g., snow hauling, roof raking, sidewalk crews).
+        <div style="margin-top:14px" class="notice">
+          <b>Template reminder:</b> Don’t claim “licensed & insured” unless the operator you rent/sell this to truly is.
+          Replace this section with their exact services (roof raking, snow hauling, sidewalk crews, etc.).
         </div>
-
       </div>
     </section>
 
-    <section class="section" style="background: var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding: 56px 0;">
+    <!-- CONTACT HIGHER + SALESY -->
+    <section class="contact-band" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Book service the fast way</h3>
+            <p>
+              For the best response time, submit the quote form with your address + service type.
+              If it’s urgent (active storm), calling is fastest.
+            </p>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="tel:+16305550123">Call (630) 555-0123</a>
+              <a class="btn btn-ghost" href="#quoteForm">Use Quote Form</a>
+            </div>
+            <p class="fineprint" style="margin-top:10px;">
+              Replace with operator’s real contact info once you place this site.
+            </p>
+          </div>
+
+          <div class="contact-card" id="areas">
+            <h3>Service area</h3>
+            <p>Naperville + nearby suburbs depending on routing and availability.</p>
+            <div class="trustline" style="margin-top:10px">
+              <span class="pill">Naperville</span>
+              <span class="pill">Lisle</span>
+              <span class="pill">Aurora</span>
+              <span class="pill">Wheaton</span>
+              <span class="pill">Bolingbrook</span>
+              <span class="pill">Downers Grove</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section alt">
       <div class="container">
         <div class="split">
           <div class="card">
-            <h2 class="h2" style="margin-bottom:8px;">How it works</h2>
+            <h2 class="h2" style="margin-bottom:6px;">How it works</h2>
+            <p class="lead">A simple, accountable process that keeps expectations clear.</p>
             <div class="steps">
               <div class="step">
                 <div class="num">1</div>
-                <div class="txt"><b>Request service</b> Share your address, scope, and preferences.</div>
+                <div class="txt"><b>Request service</b> Submit the form with address + scope.</div>
               </div>
               <div class="step">
                 <div class="num">2</div>
-                <div class="txt"><b>Confirm scope</b> We align on timing expectations and service plan options.</div>
+                <div class="txt"><b>Confirm availability</b> We respond and confirm timing based on routing.</div>
               </div>
               <div class="step">
                 <div class="num">3</div>
-                <div class="txt"><b>Work completed</b> Service delivered with clear communication and follow-through.</div>
+                <div class="txt"><b>Service delivered</b> Work completed with clear communication.</div>
               </div>
             </div>
           </div>
 
-          <div class="card" id="areas">
-            <h2 class="h2" style="margin-bottom:8px;">Service area</h2>
-            <p class="lead" style="margin-bottom:14px;">
-              Based in Naperville and serving nearby suburbs depending on routing and availability.
-            </p>
-            <div class="grid3" style="grid-template-columns: 1fr 1fr; gap:10px;">
-              <div class="pill">Naperville</div>
-              <div class="pill">Lisle</div>
-              <div class="pill">Aurora</div>
-              <div class="pill">Wheaton</div>
-              <div class="pill">Bolingbrook</div>
-              <div class="pill">Downers Grove</div>
+          <div class="card">
+            <h2 class="h2" style="margin-bottom:6px;">Why this feels different</h2>
+            <p class="lead">Most snow sites are generic. This one is built to convert.</p>
+            <div class="steps">
+              <div class="step">
+                <div class="num">✓</div>
+                <div class="txt"><b>Naperville-forward copy</b> (not “Serving Chicagoland” fluff).</div>
+              </div>
+              <div class="step">
+                <div class="num">✓</div>
+                <div class="txt"><b>Short, high-intent form</b> that gets real jobs booked.</div>
+              </div>
+              <div class="step">
+                <div class="num">✓</div>
+                <div class="txt"><b>Trust signals</b> that are believable and easy to swap per operator.</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT MOVED UP (Higher on page) -->
-    <section class="section" id="contact" style="background: var(--surface2); border-top:1px solid var(--border); padding: 60px 0;">
+    <!-- FAQ -->
+    <section class="section" id="faq">
       <div class="container">
-        <div class="section-head" style="margin-bottom:28px;">
-          <div>
-            <h2 class="h2">Request a quote</h2>
-            <p class="lead">Fast responses during business hours. Professional service standards all winter.</p>
-          </div>
-          <a class="btn btn-primary" href="tel:+16305550123">Call (630) 555-0123</a>
-        </div>
-
-        <div class="split">
-          <div class="card">
-            <h3>Contact</h3>
-            <p class="lead" style="margin-top:8px;">
-              Phone: <a href="tel:+16305550123">(630) 555-0123</a><br/>
-              Email: <a href="mailto:quotes@napervillesnow.com">quotes@napervillesnow.com</a>
-            </p>
-            <p class="smallprint" style="margin-top:12px;">
-              Replace with the operator's real contact info when you shop this site.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Quote form</h3>
-            <p class="lead" style="margin-top:8px;">Simple, short, and designed to convert.</p>
-            <form action="#" method="post" style="margin-top:16px;">
-              <div class="form-row">
-                <div class="field">
-                  <label for="cname">Name</label>
-                  <input id="cname" name="name" type="text" required />
-                </div>
-                <div class="field">
-                  <label for="cphone">Phone</label>
-                  <input id="cphone" name="phone" type="tel" required />
-                </div>
-              </div>
-              <div class="field">
-                <label for="cservice">Service</label>
-                <select id="cservice" name="service" required>
-                  <option value="" selected disabled>Select...</option>
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                  <option>Ice management</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="cmessage">Message</label>
-                <textarea id="cmessage" name="message" placeholder="Address, scope, and timing preferences."></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ now below contact -->
-    <section class="section" id="faq" style="padding-top:56px;">
-      <div class="container">
-        <div class="section-head" style="margin-bottom:26px;">
+        <div class="section-head">
           <div>
             <h2 class="h2">FAQ</h2>
-            <p class="lead">Answers to common questions from homeowners and property managers.</p>
+            <p class="lead">Quick answers for homeowners and property managers.</p>
           </div>
         </div>
 
         <div class="faq">
           <details>
             <summary>Do you offer seasonal contracts?</summary>
-            <p>Yes — many clients prefer a seasonal plan for predictable service and priority routing. Contract options vary by property and scope.</p>
+            <p>Many operators prefer seasonal plans for predictable routing and priority service. Options depend on the company that’s servicing your address.</p>
           </details>
           <details>
             <summary>How do you handle overnight storms and heavy snowfall?</summary>
-            <p>We run routed service based on plan type and location. During major events, timing is managed by route priority and safe operating conditions.</p>
+            <p>Service is routed by plan type and location. During major events, timing is managed by safe operating conditions and route priority.</p>
           </details>
           <details>
             <summary>Do you service commercial properties and HOAs?</summary>
-            <p>Yes. We support lots, entrances, and pedestrian areas. If you need documentation or recurring service, we can structure a plan accordingly.</p>
+            <p>Yes — commercial lots, entrances, and pedestrian areas are common. The quote form helps confirm scope quickly.</p>
           </details>
           <details>
             <summary>Do you provide salting or de-icing?</summary>
-            <p>Ice management options are available depending on site needs, temperature, and timing. We can discuss the right approach for your property.</p>
+            <p>Ice management options vary by property and temperature conditions. We’ll confirm what’s appropriate based on your needs.</p>
           </details>
         </div>
       </div>
@@ -904,30 +781,65 @@
       <div class="footer-grid">
         <div>
           <b>Naperville Snow Removal</b><br/>
-          Professional snow & ice management in Naperville, IL
+          Snow & ice service lead generation template for Naperville, IL.
         </div>
         <div>
           <a href="#services">Services</a> ·
           <a href="#areas">Service Area</a> ·
-          <a href="#contact">Contact</a>
+          <a href="#contact">Contact</a> ·
+          <a href="#faq">FAQ</a>
         </div>
         <div>© <span class="year"></span> All rights reserved.</div>
       </div>
     </div>
   </footer>
 
+  <!-- Mobile call bar (conversion) -->
+  <div class="callbar" role="region" aria-label="Quick actions">
+    <div class="callbar-inner">
+      <a class="btn btn-primary" href="tel:+16305550123">Call Now</a>
+      <a class="btn btn-ghost" href="#contact">Get Quote</a>
+    </div>
+  </div>
+
   <script>
-    // Auto-update year
+    // Year
     document.querySelector('.year').textContent = new Date().getFullYear();
 
-    // Form submission
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your inquiry. We will contact you shortly.');
-        this.reset();
-      });
+    // Quote form demo submit
+    const form = document.getElementById('quoteForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks — we received your request. You’ll hear back during business hours.');
+      form.reset();
     });
+
+    // Carousel (2 images for now; add more later)
+    const images = [
+      { src: "/Images/naperville-1.jpg", title: "Naperville-first routing", sub: "Priority service based on availability and routing." },
+      { src: "/Images/naperville-2.png", title: "Driveways + sidewalks", sub: "Clear scope, fast scheduling, and follow-through." }
+    ];
+
+    const heroImage = document.getElementById('heroImage');
+    const dots = document.querySelectorAll('.dots button');
+    const overlayTitle = document.querySelector('.overlay-title');
+    const overlaySub = document.querySelector('.overlay-sub');
+    let i = 0;
+
+    function render(idx){
+      i = (idx + images.length) % images.length;
+      heroImage.src = images[i].src;
+      overlayTitle.textContent = images[i].title;
+      overlaySub.textContent = images[i].sub;
+      dots.forEach((d, n) => d.classList.toggle('is-active', n === i));
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => render(i - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => render(i + 1));
+    dots.forEach((btn, idx) => btn.addEventListener('click', () => render(idx)));
+
+    // Optional: auto-rotate (comment out if you hate it)
+    setInterval(() => render(i + 1), 6500);
   </script>
 </body>
 </html>
